@@ -1,7 +1,6 @@
 const loadVideos = async () => {
     const res = await fetch('https://openapi.programming-hero.com/api/videos/categories');
     const data = await res.json();
-    // console.log(data.data);
 
     const tabContainer = document.getElementById('tab-container');
     data.data.forEach((category) => {
@@ -11,8 +10,6 @@ const loadVideos = async () => {
         `;
         tabContainer.appendChild(div);
     });
-    // console.log(data.data);
-    // loadVideosHandler(category);
     if (data.data.length > 0) {
         const firstCategory = data.data[0];
         loadVideosHandler(firstCategory.category_id);
@@ -21,15 +18,12 @@ const loadVideos = async () => {
 };
 let sortedByViews = false;
 const loadVideosHandler = async (categoryId) => {
-    // const displayAllVideos = 'https://openapi.programming-hero.com/api/videos';
-    // console.log(displayAllVideos);
+    
     const response = await fetch(`https://openapi.programming-hero.com/api/videos/category/${categoryId}`);
     const data = await response.json();
-    // console.log(data.data.others);
-    if(sortedByViews){
-        data.data.sort((a,b) =>b.other.views - a.other.views);
-        
-    }
+    // if(sortedByViews){
+    //     data.data.sort((a,b) =>b.other.views - a.other.views);        
+    // }
     const cardContainer = document.getElementById('card-container');
     cardContainer.innerHTML = '';
 
@@ -43,12 +37,7 @@ const loadVideosHandler = async (categoryId) => {
         </div>
         </div>
         `;
-        cardContainer.appendChild(div);
-        // if(sortedByViews){
-        //     videos.others.sort((a,b) =>b.other.views - a.other.views);
-            
-        // }
-        // sortedByViews = false;
+        cardContainer.appendChild(div);        
     }
     else {
         data.data.forEach((videos) => {
@@ -79,22 +68,17 @@ const loadVideosHandler = async (categoryId) => {
             </div>
         `;
             cardContainer.appendChild(div);
-            // if(sortedByViews){
-            //     videos.others.views((a,b) =>b.other.views - a.other.views);
-                
-            // }
         });
     }
-    // sortedByViews = false;
 }
-// const sortButtonHandler = () =>{
-//     sortedByViews = true;
-//     loadVideosHandler(currentCategoryId);
-// }
-// sortButtonHandler()
 loadVideos()
-// loadVideosHandler()
 const blogPage = () =>{
     const blogHtmlFile = 'blog.html';
     window.open(blogHtmlFile);
 }
+const toggleSortByViews = () => {
+    sortedByViews = !sortedByViews;
+    const currentCategory = document.getElementById();
+    
+}
+// Finish
