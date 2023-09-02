@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Blog</title>
+    <link href="https://cdn.jsdelivr.net/npm/daisyui@3.6.4/dist/full.css" rel="stylesheet" type="text/css" />
+    <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body>
+    <section class="bg-cyan-100 w-9/12 mx-auto">
+        <div class="p-4 text-black">
+            <h1 class="text-3xl font-bold pb-3">Scope Of Var :</h1>
+    <h3 class="font-bold">Function Scope</h3>
+    <p>Variables declared with 'var' are function-scoped. This means they are accessible within the function where they are defined.</p>
+    <h3 class="font-bold">Hoisting</h3>
+    <p>Variables declared with 'var' are hoisted to the top of their function or global scope. This means we can use them before they are declared, but they will have an initial value of 'undefined'.</p>
+    <h3 class="font-bold">Global Scope</h3>
+    <p>If a 'var' variable is declared outside of any function or block, it becomes a global variable, accessible throughout the entire script.</p>
+
+    <h1 class="text-3xl font-bold py-3">Scope Of Let :</h1>
+    <h3 class="font-bold">Block Scope</h3>
+    <p>Variables declared with 'let' are block-scoped, which means they are limited to the block, statement, or curly braces {} where they are defined. They are not accessible outside of that scope.</p>
+    <h3 class="font-bold">Hoisting</h3>
+    <p>Like 'var', 'let' variables are hoisted but not initialized. If we try to access a let variable before its declaration, we will get a 'ReferenceError'.</p>
+    <h3 class="font-bold">No Global Object Property</h3>
+    <p>Variables declared with let do not become properties of the global object.</p>
+    
+    <h1 class="text-3xl font-bold py-3">Scope Of Const :</h1>
+    <h3 class="font-bold">Block Scope</h3>
+    <p>Variables declared with const are also block-scoped, just like let. They have the same scoping rules but with an additional constraint that they cannot be reassigned after their initial assignment.</p>
+    <h3 class="font-bold">Hoisting</h3>
+    <p>Like 'let', 'const' variables are hoisted but not initialized. If we try to access a let variable before its declaration, we will get a 'ReferenceError'.</p>
+    <h3 class="font-bold">Constant Value</h3>
+    <p>Once a value is assigned to a const variable, it cannot be changed. This makes const ideal for declaring constants or values that should not be mutated.</p>
+        </div>
+    </section>
+
+    <section class="bg-cyan-100 w-9/12 mx-auto mt-8 pb-3">
+        <div class="p-4 text-black">
+            <h3 class="font-bold">'null' and undefined are two distinct values in JavaScript, and they have different use cases based on their meanings and behaviors:</h3>
+        <h1 class="text-3xl font-bold py-3">Null :</h1>
+        <h3 class="font-bold">Intentional Absence of Value</h3>
+        <p>'null' is typically used to represent the intentional absence of any object value or the absence of a value that should exist but hasn't been provided.</p>
+        <h3 class="font-bold">Assignment</h3>
+        <p>You can assign null to a variable or a property to explicitly indicate that it has no meaningful value.</p>
+        <h3 class="font-bold">Comparisons</h3>
+        <p>You might use null in comparisons or conditionals to check if a variable has been intentionally set to no value.</p>
+        <h1 class="text-3xl font-bold py-3">Undefined :</h1>
+        <h3 class="font-bold">Default Value</h3>
+        <p>In JavaScript, variables that are declared but not assigned a value are automatically initialized with undefined. It represents the absence of an intentional value assignment.</p>
+        <h3 class="font-bold">Function Parameters</h3>
+        <p>When a function is called with fewer arguments than it expects, the missing parameters are set to 'undefined'.</p>
+        <h3 class="font-bold">Property Access</h3>
+        <p>If you try to access an object property that doesn't exist, you'll get 'undefined'.</p>
+        <h3 class="font-bold">Return Value</h3>
+        <p>Functions that don't explicitly return a value return undefined by default.</p>
+        
+        </div>
+    </section>
+    <section class="bg-cyan-100 w-9/12 mx-auto mt-8 pb-3">
+        <div class="p-4 text-black">
+            <h3 class="text-2xl font-bold pb-4">REST API, which stands for Representational State Transfer Application Programming Interface, is a set of architectural principles and constraints for designing networked applications. It is not a specific technology or protocol but rather a style of building web services that are scalable, stateless, and can communicate over the HTTP protocol. RESTful APIs are designed to be simple, lightweight, and easy to understand, making them a popular choice for building web services and APIs on the internet.</h3>
+        <h3 class="text-3xl font-bold py-3">Key characteristics and principles of RESTFUL APIs include:</h3>
+        <h3 class="font-bold">Stateless</h3>
+        <p> Each request from a client to a server must contain all the information needed to understand and process the request. In other words, the server should not rely on any previous requests from the same client.</p>
+        <h3 class="font-bold">Client-Server Architecture</h3>
+        <p>REST separates the client (the user interface or application) from the server (the data store). This separation allows both components to evolve independently and be scaled as needed.</p>
+        <h3 class="font-bold">Uniform Interface</h3>
+        <p>RESTful APIs have a uniform and consistent interface, which simplifies interaction. It typically includes HTTP methods like GET (retrieve data), POST (create data), PUT (update data), DELETE (remove data), and standard conventions for resource naming and addressing.</p>
+        <h3 class="font-bold">Resource-Based</h3>
+        <p>Resources (e.g., data objects or entities) are the key abstractions in REST. Each resource is identified by a unique URI (Uniform Resource Identifier). Clients interact with resources through the provided URIs.</p>
+        <h3 class="font-bold">Representation</h3>
+        <p>Resources can have multiple representations, such as JSON, XML, HTML, or others. Clients can specify their preferred representation when making requests, and servers should respond accordingly.</p>
+        <h3 class="font-bold">Stateless Communication</h3>
+        <p>Each client request to the server must be self-contained, and the server should not retain any client state between requests. Session state, if needed, is typically managed on the client side.</p>
+        <h3 class="font-bold">Layered System</h3>
+        <p>REST allows for a layered architecture where intermediate servers (proxies, load balancers, etc.) can be placed between the client and server to provide additional services and improve scalability.</p>
+        <h3 class="font-bold">Idempotence</h3>
+        <p>Some HTTP methods, like PUT and DELETE, are idempotent, meaning that performing the same operation multiple times has the same effect as performing it once. This property is important for robustness.</p>
+        
+        <p>RESTful APIs are widely used for various purposes, including web applications, mobile app development, and integration with external services. They are known for their simplicity, ease of use, and compatibility with the HTTP protocol, making them a popular choice for building modern web services.</p>
+        
+        </div>
+    </section>
+</body>
+</html>
