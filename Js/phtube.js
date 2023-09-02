@@ -7,7 +7,7 @@ const loadVideos = async () => {
     data.data.forEach((category) => {
         const div = document.createElement('div');
         div.innerHTML = `
-        <button onclick="loadVideosHandler('${category.category_id}')" class="btn btn-secondary w-24">${category.category}</button>
+        <button onclick="loadVideosHandler('${category.category_id}')" class="btn btn-secondary w-24 my-2">${category.category}</button>
         `;
         tabContainer.appendChild(div);
     });
@@ -36,7 +36,7 @@ const loadVideosHandler = async (categoryId) => {
     if (data.data.length === 0) {
         const div = document.createElement('div');
         div.innerHTML = `
-        <div class="card bg-gray-100 w-full mx-[625px] my-64">
+        <div class="card bg-gray-100 w-full md:mx-[150px] md:my-64 mt-6">
         <div class="">
             <img class="mx-28" src="./Icon.png" alt="">
             <h2 class="text-center text-black text-3xl font-bold">Oops!! Sorry, There is no <br> content here</h2>
@@ -59,7 +59,7 @@ const loadVideosHandler = async (categoryId) => {
                 <figure class="position: relative w-full h-56  rounded-md shadow-xl ">
                 <img class="w-full h-full" src="${videos.thumbnail}" />
                 </figure>
-                <p class="text-white bg-gray-950 position: absolute w-fit rounded-md ml-40 mt-48 px-1">${(Math.round(videos.others.posted_date / 60) - Math.round(videos.others.posted_date / 60) % 60) / 60} hrs   ${Math.round(videos.others.posted_date / 60) % 60} mins ago </p>  
+                <p class="text-white bg-gray-950 position: absolute w-fit rounded-md ml-36 mt-48 px-1">${(Math.round(videos.others.posted_date / 60) - Math.round(videos.others.posted_date / 60) % 60) / 60} hrs   ${Math.round(videos.others.posted_date / 60) % 60} mins ago </p>  
                 
                 <div class="card-body">
                     <div class="flex p-3 gap-6">
